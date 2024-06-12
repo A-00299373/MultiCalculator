@@ -37,8 +37,8 @@ class MainActivity : ComponentActivity() {
 
 @Preview
 @Composable
-fun AppAndroidPreview() {
-    App()
+fun App() {
+    CalcView()
 }
 
 @Composable
@@ -191,3 +191,7 @@ fun CalcEqualsButton(display: MutableState<String>, calculator: Calculator) {
     }
 }
 
+@Composable
+fun CalcEqualsButton( ) {
+
+}

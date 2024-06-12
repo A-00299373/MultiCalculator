@@ -192,6 +192,6 @@ fun CalcEqualsButton(display: MutableState<String>, calculator: Calculator) {
 }
 
 @Composable
-fun CalcEqualsButton( ) {
+fun CalcEqualsButton(display: MutableState<String>, modifier: Modifier = Modifier) {
 
 }

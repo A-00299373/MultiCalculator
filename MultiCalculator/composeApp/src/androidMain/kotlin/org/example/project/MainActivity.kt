@@ -5,6 +5,8 @@ import Calculator
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -44,7 +46,14 @@ fun CalcRow() {
 
 @Composable
 fun CalcDisplay(display: MutableState<String>) {
-
+    Text(
+        text = display.value,
+        modifier = Modifier
+            .height(50.dp)
+            .padding(5.dp)
+            .fillMaxWidth(),
+        fontSize = 24.sp,
+    )
 }
 
 @Composable

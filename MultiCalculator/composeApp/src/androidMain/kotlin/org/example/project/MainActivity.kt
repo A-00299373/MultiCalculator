@@ -40,7 +40,7 @@ fun CalcView() {
 }
 
 @Composable
-fun CalcRow() {
+fun CalcRow(display: MutableState<String>, startNum: Int, numButtons: Int) {
 
 }
 

@@ -77,6 +77,7 @@ fun CalcView() {
                 ) {
                     CalcNumericButton(number = 0, display = displayText)
                     CalcEqualsButton(display = displayText, calculator = calculator)
+                    CalcClearButton(display = displayText)
                 }
             }
             Column(
@@ -192,6 +193,14 @@ fun CalcEqualsButton(display: MutableState<String>, calculator: Calculator) {
 }
 
 @Composable
-fun CalcEqualsButton(display: MutableState<String>, modifier: Modifier = Modifier) {
-
+fun CalcClearButton(display: MutableState<String>, modifier: Modifier = Modifier) {
+    Button(
+        onClick = {
+            display.value = "0"
+        },
+        modifier = modifier
+            .padding(4.dp)
+    ) {
+        Text(text = "C", fontSize = 24.sp, color = Color.White)
+    }
 }

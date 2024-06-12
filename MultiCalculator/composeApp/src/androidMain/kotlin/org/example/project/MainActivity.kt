@@ -54,7 +54,17 @@ fun CalcNumericButton() {
 
 @Composable
 fun CalcOperationButton(operation: String, display: MutableState<String>) {
-
+    Button(
+        onClick = {
+            if (display.value != "0") {
+                display.value += operation
+            }
+        },
+        modifier = Modifier
+            .padding(4.dp)
+    ) {
+        Text(text = operation, fontSize = 24.sp, color = Color.White)
+    }
 }
 
 @Composable

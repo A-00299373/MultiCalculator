@@ -48,7 +48,7 @@ fun CalcDisplay() {
 }
 
 @Composable
-fun CalcNumericButton() {
+fun CalcNumericButton(number: Int, display: MutableState<String>) {
 
 }
 

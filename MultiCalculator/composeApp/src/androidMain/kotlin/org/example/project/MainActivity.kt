@@ -1,10 +1,12 @@
 package org.example.project
 
 import App
+import Calculator
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.tooling.preview.Preview
 
 class MainActivity : ComponentActivity() {
@@ -49,7 +51,7 @@ fun CalcOperationButton() {
 }
 
 @Composable
-fun CalcEqualsButton() {
+fun CalcEqualsButton(display: MutableState<String>, calculator: Calculator) {
 
 }
 

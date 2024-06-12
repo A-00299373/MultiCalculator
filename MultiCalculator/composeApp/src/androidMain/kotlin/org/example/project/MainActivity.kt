@@ -41,7 +41,7 @@ fun CalcView() {
 
 @Composable
 fun CalcRow(display: MutableState<String>, startNum: Int, numButtons: Int) {
-
+    val endNum = startNum + numButtons
 }
 
 @Composable

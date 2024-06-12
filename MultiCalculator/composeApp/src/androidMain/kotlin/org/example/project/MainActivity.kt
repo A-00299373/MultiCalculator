@@ -33,3 +33,8 @@ fun CalcRow() {
 
 }
 
+@Composable
+fun CalcDisplay() {
+
+}
+

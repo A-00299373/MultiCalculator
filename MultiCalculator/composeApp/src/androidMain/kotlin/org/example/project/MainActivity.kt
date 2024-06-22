@@ -189,78 +189,37 @@ fun CalcDisplay(display: MutableState<String>) {
             .height(50.dp)
             .padding(5.dp),
     )
-
-@Composable
-fun CalcNumericButton(number: Int, onPress: (number: Int) -> Unit) {
-    Button(
-        onClick = { onPress(number) },
-        modifier = Modifier.padding(4.dp)
-    ) {
-        Text(text = number.toString())
-    }
 }
 
-@Composable
-fun CalcOperationButton(operation: String, onPress: (operation: String) -> Unit) {
-    Button(
-        onClick = { onPress(operation) },
-        modifier = Modifier.padding(4.dp)
-    ) {
-        Text(text = operation)
+    @Composable
+    fun CalcNumericButton(number: Int, onPress: (number: Int) -> Unit) {
+        Button(
+            onClick = { onPress(number) },
+            modifier = Modifier.padding(4.dp)
+        ) {
+            Text(text = number.toString())
+        }
     }
-}
 
-@Composable
-fun CalcEqualsButton(display: MutableState<String>, calculator: Calculator) {
-    Button(
-        onClick = {
-            if (display.value != "0") {
-                try {
-                    val expression = display.value
-                    val parts = expression.split("\\+|\\-|\\*|\\/".toRegex())
-                    val left = parts[0].toInt()
-                    val right = parts[1].toInt()
-                    val operation = expression.replace("\\d+".toRegex(), "")
-
-                    when (operation) {
-                        "+" -> {
-                            val total = calculator.add(left, right)
-                            display.value = total.toString()
-                        }
-                        "-" -> {
-                            val total = calculator.subtract(left, right)
-                            display.value = total.toString()
-                        }
-                        "*" -> {
-                            val total = calculator.multiply(left, right)
-                            display.value = total.toString()
-                        }
-                        "/" -> {
-                            val total = calculator.divide(left, right)
-                            display.value = total.toString()
-                        }
-                    }
-                } catch (e: Exception) {
-                    display.value = "0"
-                }
-            }
-        },
-        modifier = Modifier
-            .padding(4.dp)
-    ) {
-        Text(text = "=", fontSize = 24.sp, color = Color.White)
+    @Composable
+    fun CalcOperationButton(operation: String, onPress: (operation: String) -> Unit) {
+        Button(
+            onClick = { onPress(operation) },
+            modifier = Modifier.padding(4.dp)
+        ) {
+            Text(text = operation)
+        }
     }
-}
 
-@Composable
-fun CalcClearButton(display: MutableState<String>, modifier: Modifier = Modifier) {
-    Button(
-        onClick = {
-            display.value = "0"
-        },
-        modifier = modifier
-            .padding(4.dp)
-    ) {
-        Text(text = "C", fontSize = 24.sp, color = Color.White)
+    @Composable
+    fun CalcEqualsButton(onPress: () -> Unit) {
+        Button(
+            onClick = { onPress() },
+            modifier = Modifier.padding(4.dp)
+        ) {
+            Text(text = "=")
+        }
     }
-}
+
+
+

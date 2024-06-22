@@ -169,14 +169,13 @@ fun CalcView() {
 }
 
 @Composable
-fun CalcRow(display: MutableState<String>, startNum: Int, numButtons: Int) {
+fun CalcRow(onPress: (number: Int) -> Unit, startNum: Int, numButtons: Int) {
     val endNum = startNum + numButtons
     Row(
-        modifier = Modifier
-            .padding(0.dp)
+        modifier = Modifier.padding(0.dp)
     ) {
         for (i in startNum until endNum) {
-            CalcNumericButton(number = i, display = display)
+            CalcNumericButton(onPress = onPress, number = i)
         }
     }
 }

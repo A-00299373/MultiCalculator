@@ -201,17 +201,12 @@ fun CalcNumericButton(number: Int, onPress: (number: Int) -> Unit) {
 }
 
 @Composable
-fun CalcOperationButton(operation: String, display: MutableState<String>) {
+fun CalcOperationButton(operation: String, onPress: (operation: String) -> Unit) {
     Button(
-        onClick = {
-            if (display.value != "0") {
-                display.value += operation
-            }
-        },
-        modifier = Modifier
-            .padding(4.dp)
+        onClick = { onPress(operation) },
+        modifier = Modifier.padding(4.dp)
     ) {
-        Text(text = operation, fontSize = 24.sp, color = Color.White)
+        Text(text = operation)
     }
 }
 
